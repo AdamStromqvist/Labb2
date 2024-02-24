@@ -62,11 +62,6 @@ namespace ProjektOOSU2_Test.PresentationLayer
 
         }
 
-        private void buttonViewPatientInformation_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private async void buttonDeletePatient_Click(object sender, EventArgs e)
         {
             if (listBoxPatients.SelectedItem is Patient selectedPatient)
