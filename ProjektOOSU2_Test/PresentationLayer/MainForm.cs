@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjektOOSU2_Test.BusinessLayer;
+using ProjektOOSU2_Test.DataLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +33,21 @@ namespace ProjektOOSU2_Test.PresentationLayer
 
         private void buttonPatientService_Click(object sender, EventArgs e)
         {
-            var patientForm = new PatientForm();
+            // Skapa DbContextOptions för PatientManagementContext
+            var optionsBuilder = new DbContextOptionsBuilder<PatientManagementContext>();
+            optionsBuilder.UseSqlServer("Server=sqlutb2-db.hb.se,56077;Database=oosu2408;User ID=oosu2408;Password=UKB987;TrustServerCertificate=True;"); // Ersätt med din faktiska anslutningssträng
+
+            // Skapa en instans av PatientManagementContext med de angivna options
+            var dbContext = new PatientManagementContext(optionsBuilder.Options);
+
+            // Skapa en UnitOfWork-instans med dbContext
+            IUnitOfWork unitOfWork = new UnitOfWork(dbContext);
+
+            // Skapa en PatientService-instans med unitOfWork
+            IPatientService patientService = new PatientService(unitOfWork);
+
+            // Skapa och visa PatientForm med patientService
+            var patientForm = new PatientForm(patientService);
             patientForm.Show();
         }
 
