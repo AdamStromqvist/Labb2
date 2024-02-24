@@ -39,7 +39,7 @@
             listBoxPatient.Name = "listBoxPatient";
             listBoxPatient.Size = new Size(200, 409);
             listBoxPatient.TabIndex = 0;
-            
+            listBoxPatient.SelectedIndexChanged += listBoxPatient_SelectedIndexChanged;
             // 
             // PatientForm
             // 

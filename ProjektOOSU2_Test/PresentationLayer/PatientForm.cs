@@ -28,5 +28,10 @@ namespace ProjektOOSU2_Test.PresentationLayer
             listBoxPatient.DataSource = patients.ToList();
             listBoxPatient.DisplayMember = "Name"; // Antag att "Name" är en property hos Patient-entiteten
         }
+
+        private void listBoxPatient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
