@@ -29,7 +29,7 @@ namespace ProjektOOSU2_Test
 
             // Skapa en instans av DbContext
             var context = new PatientManagementContext(optionsBuilder.Options);
-
+            
             var unitOfWork = new UnitOfWork(context);
             var employeeService = new EmployeeService(unitOfWork);
             var loginForm = new LoginForm(employeeService);

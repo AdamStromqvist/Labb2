@@ -28,32 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBoxPatient = new ListBox();
-            SuspendLayout();
-            // 
-            // listBoxPatient
-            // 
-            listBoxPatient.FormattingEnabled = true;
-            listBoxPatient.ItemHeight = 15;
-            listBoxPatient.Location = new Point(45, 19);
-            listBoxPatient.Name = "listBoxPatient";
-            listBoxPatient.Size = new Size(200, 409);
-            listBoxPatient.TabIndex = 0;
-            listBoxPatient.SelectedIndexChanged += listBoxPatient_SelectedIndexChanged;
-            // 
-            // PatientForm
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(listBoxPatient);
-            Name = "PatientForm";
-            Text = "PatientForm";
-            ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "PatientForm";
         }
 
         #endregion
-
-        private ListBox listBoxPatient;
     }
 }
