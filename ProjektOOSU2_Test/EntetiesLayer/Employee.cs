@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjektOOSU2_Test.EntetiesLayer
 {
+
+//Attributes for the entity Employee
     public class Employee
     {
         public int Id { get; set; }  // Unique employment identifier
