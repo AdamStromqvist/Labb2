@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjektOOSU2_Test.DataLayer
 {
+//interface for the forms
     public interface IRepository<T> where T : class
     {
         Task<T> GetByIdAsync(int id);
@@ -17,7 +18,7 @@ namespace ProjektOOSU2_Test.DataLayer
         void Update(T entity);
         IQueryable<T> Find(Expression<Func<T, bool>> predicate);
     }
-
+//class for Dbcontext and DbSet entities
     public class Repository<T> : IRepository<T> where T : class
     {
         protected readonly DbContext _context;
