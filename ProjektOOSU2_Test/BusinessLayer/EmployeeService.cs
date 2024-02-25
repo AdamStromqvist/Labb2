@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
+
 namespace ProjektOOSU2_Test.BusinessLayer
 {
-    public interface IEmployeeService
+
+//interface for employees connected to login form
+
+    public interface IEmployeeService 
     {
         Task<bool> ValidateLoginAsync(string username, string password);
     }
-
+    
+//Introduce EmployeeService class connected to UnitOfWork
+    
     public class EmployeeService : IEmployeeService
     {
         private readonly IUnitOfWork _unitOfWork;
