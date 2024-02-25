@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProjektOOSU2_Test.BusinessLayer
 {
-    internal class DoctorAppointmentService
+    public interface IDoctorAppointmentService
     {
     }
+
+    public class DoctorAppointmentService : IDoctorAppointmentService 
+    { }
 }

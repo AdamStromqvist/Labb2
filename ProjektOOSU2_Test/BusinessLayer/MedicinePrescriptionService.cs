@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjektOOSU2_Test.BusinessLayer
 {
-    internal class MedicinePrescriptionService
+    public interface IMedicinePrescriptionService
     {
     }
+
+    public class MedicinePrescriptionService : IMedicinePrescriptionService 
+    { }
+
 }

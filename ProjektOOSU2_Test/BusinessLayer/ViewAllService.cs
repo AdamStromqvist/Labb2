@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjektOOSU2_Test.BusinessLayer
 {
-    public interface IDiagnosisService
+
+    public interface IViewAllService 
+    { }
+
+    public class ViewAllService : IViewAllService
     {
     }
-
-    public class DiagnosisService : IDiagnosisService 
-    { }
 }
