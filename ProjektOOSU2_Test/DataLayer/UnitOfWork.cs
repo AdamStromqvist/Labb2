@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjektOOSU2_Test.DataLayer
 {
+//interface collecting everything for the forms
     public interface IUnitOfWork : IDisposable
     {
         IRepository<Patient> Patients { get; }
@@ -17,6 +18,8 @@ namespace ProjektOOSU2_Test.DataLayer
         IRepository<MedicinePrescription> MedicinePrescriptions { get; }
         Task<int> CompleteAsync();
     }
+
+    //A class collecting everything for Dbcontext
 
     public class UnitOfWork : IUnitOfWork
     {
