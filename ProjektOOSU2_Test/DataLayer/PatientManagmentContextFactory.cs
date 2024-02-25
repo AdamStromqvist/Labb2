@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace ProjektOOSU2_Test.DataLayer
 {
+
+//A class collaborating with DBcontext and db to create migrations
+
     public class PatientManagementContextFactory : IDesignTimeDbContextFactory<PatientManagementContext>
     {
         public PatientManagementContext CreateDbContext(string[] args)
