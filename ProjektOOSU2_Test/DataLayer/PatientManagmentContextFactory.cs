@@ -13,7 +13,9 @@ namespace ProjektOOSU2_Test.DataLayer
 
     public class PatientManagementContextFactory : IDesignTimeDbContextFactory<PatientManagementContext>
     {
-        public PatientManagementContext CreateDbContext(string[] args)
+        public PatientManagementContext CreateDbContext(string[] args) 
+        //"This is the method required by the IDesignTimeDbContextFactory.
+        //It is used to create an instance of the PatientManagementContext."
         {
             var optionsBuilder = new DbContextOptionsBuilder<PatientManagementContext>();
             optionsBuilder.UseSqlServer(@"Server=sqlutb2-db.hb.se,56077;Database=oosu2408;User ID=oosu2408;Password=UKB987;TrustServerCertificate=True;");
