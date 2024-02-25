@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace ProjektOOSU2_Test
 {
+
+    //A class that has everything for starting the program
     static class Program
     {
 
 
-        // Global tillgång till UnitOfWork om så önskas
+        // Global access to UnitOfWork if required
+       
         public static IUnitOfWork UnitOfWork { get; private set; }
 
         [STAThread]
@@ -23,22 +26,24 @@ namespace ProjektOOSU2_Test
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Konfigurera DbContextOptions
+            // Configurate DbContextOptions
             var optionsBuilder = new DbContextOptionsBuilder<PatientManagementContext>();
             optionsBuilder.UseSqlServer(@"Server=sqlutb2-db.hb.se,56077;Database=oosu2408;User ID=oosu2408;Password=UKB987;TrustServerCertificate=True;");
 
-            // Skapa en instans av DbContext
+            // Create an instans of DbContext
             var context = new PatientManagementContext(optionsBuilder.Options);
             
             var unitOfWork = new UnitOfWork(context);
             var employeeService = new EmployeeService(unitOfWork);
             var loginForm = new LoginForm(employeeService);
 
-            // Skapa en global instans av UnitOfWork (valfritt, beroende på design)
+            // Create a global instans of UnitOfWork (optional, depending on design)
             UnitOfWork = new UnitOfWork(context);
 
-            // Starta applikationen med huvudformuläret
-            // Antag att MainForm är din startform, byt ut mot din faktiska startform
+            // Start application with main form
+          
+            // Assume MainForm is your startup form, replace it with your actual startup form
+           
             Application.Run(loginForm);
         }
     }
