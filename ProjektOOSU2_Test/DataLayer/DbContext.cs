@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace ProjektOOSU2_Test.DataLayer
 {
+
+//A class working together with the database to create migrations
+
     public class PatientManagementContext : DbContext
     {
         public DbSet<Patient> Patients { get; set; }
