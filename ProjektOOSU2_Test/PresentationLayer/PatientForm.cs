@@ -12,6 +12,8 @@ using System.Windows.Forms;
 
 namespace ProjektOOSU2_Test.PresentationLayer
 {
+
+//class for patientform
     public partial class PatientForm : Form
     {
         private readonly IPatientService _patientService;
@@ -27,8 +29,8 @@ namespace ProjektOOSU2_Test.PresentationLayer
         {
             var patients = await _patientService.GetAllPatientsAsync();
             listBoxPatients.DataSource = patients.ToList();
-            listBoxPatients.DisplayMember = "PatientName"; // Visa patientens namn
-            listBoxPatients.ValueMember = "Id"; // Använd Id som värde
+            listBoxPatients.DisplayMember = "PatientName"; //show patient name
+            listBoxPatients.ValueMember = "Id"; // use Id as source
         }
 
         private async Task UpdatePatientListAsync()
@@ -67,7 +69,7 @@ namespace ProjektOOSU2_Test.PresentationLayer
             if (listBoxPatients.SelectedItem is Patient selectedPatient)
             {
                 await _patientService.DeletePatientAsync(selectedPatient.Id);
-                // Uppdatera listan efter borttagning
+                // update list after removal
                 await UpdatePatientListAsync();
             }
         }
@@ -94,7 +96,7 @@ namespace ProjektOOSU2_Test.PresentationLayer
             };
 
             await _patientService.AddPatientAsync(newPatient);
-            // Uppdatera listan efter att ha lagt till
+            // Update list after add
             await UpdatePatientListAsync();
         }
 
@@ -109,7 +111,7 @@ namespace ProjektOOSU2_Test.PresentationLayer
                 selectedPatient.EmailAddress = textBoxEmailAdress.Text;
 
                 await _patientService.UpdatePatientAsync(selectedPatient);
-                // Uppdatera listan efter uppdatering
+                // Update list after update
                 await UpdatePatientListAsync();
             }
         }
