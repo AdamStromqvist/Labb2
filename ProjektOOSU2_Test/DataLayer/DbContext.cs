@@ -29,15 +29,15 @@ namespace ProjektOOSU2_Test.DataLayer
         {
             base.OnModelCreating(modelBuilder);
 
-            // Seeda en test-anställd
+            //Coding directly a test employee into the database
             modelBuilder.Entity<Employee>().HasData(
                 new Employee
                 {
-                    Id = 1, // Sätt ett unikt ID
+                    Id = 1, // Set a unique ID
                     Username = "testuser",
                     NameEmployee = "Test User",
                     Profession = "Tester",
-                    Password = "testpassword", // OBS: Det är starkt rekommenderat att hash:a lösenord i en produktionsmiljö
+                    Password = "testpassword", // The password should be hashed, the recommended way
                     Specialization = "Testing"
                 }
             );
