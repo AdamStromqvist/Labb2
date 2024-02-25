@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace ProjektOOSU2_Test.PresentationLayer
 {
+
+//Class for the login form
     public partial class LoginForm : Form
     {
         private readonly IEmployeeService _employeeService;
@@ -34,9 +36,9 @@ namespace ProjektOOSU2_Test.PresentationLayer
 
             if (isValidUser)
             {
-                // Logga in användaren och öppna huvudformuläret
-                this.Hide(); // Gömmer inloggningsformuläret
-                var mainForm = new MainForm(); // Antag att MainForm är din huvudapplikationsform
+                // Log in user and open the main form
+                this.Hide(); // Hides the loginform
+                var mainForm = new MainForm(); // Log in the user and open the main application form
                 mainForm.Show();
             }
             else
