@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 namespace ProjektOOSU2_Test.BusinessLayer
 {
 
+//Interface connected to Patientform
+
         public interface IPatientService
         {
             Task<IEnumerable<Patient>> GetAllPatientsAsync();
@@ -17,7 +19,8 @@ namespace ProjektOOSU2_Test.BusinessLayer
             Task DeletePatientAsync(int patientId);
             
         }
-
+//Introduce class PatientService connected to UnitOfWork
+        
         public class PatientService : IPatientService
         {
             private readonly IUnitOfWork _unitOfWork;
