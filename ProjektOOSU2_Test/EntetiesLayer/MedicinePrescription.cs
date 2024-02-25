@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjektOOSU2_Test.EntetiesLayer
 {
+
+//Attributes for the entity MedicinePrescription
     public class MedicinePrescription
     {
         public int Id { get; set; }   // ID of the patient for whom the prescription is issued
