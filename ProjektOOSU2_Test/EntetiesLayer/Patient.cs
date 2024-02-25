@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjektOOSU2_Test.EntetiesLayer
 {
+
+//Attributes for the entity Patient
     public class Patient
     {
         public int Id { get; set; }         // Unique patient identifier
