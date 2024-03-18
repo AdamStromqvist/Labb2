@@ -19,12 +19,13 @@ namespace ProjektOOSU2_Test.DataLayer
         public DbSet<DoctorAppointment> DoctorAppointments { get; set; }
         public DbSet<MedicinePrescription> MedicinePrescriptions { get; set; }
 
+        // A method overide that configure the connection string to the SQL database 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = @"Server=sqlutb2-db.hb.se,56077;Database=oosu2408;User ID=oosu2408;Password=UKB987;TrustServerCertificate=True;";
             optionsBuilder.UseSqlServer(connectionString);
         }
-
+            
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
